@@ -4,7 +4,7 @@ package views;
 public class main {
     
     public static void main(String[] args){
-        TelaInicial Tela = new TelaInicial();
+        Splash Tela = new Splash();
         
         Tela.setVisible(true);
         
