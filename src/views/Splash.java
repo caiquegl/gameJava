@@ -4,9 +4,11 @@ package views;
 import static java.lang.Thread.sleep;
 
 public class Splash extends javax.swing.JFrame {
+    main html = new main();
 
     public Splash() {
         initComponents();
+        html.reset();
         new Thread(){
             
            

@@ -35,7 +35,7 @@ public class TelaDialogo3 extends javax.swing.JFrame {
         namePlayer.setForeground(new java.awt.Color(255, 255, 255));
         namePlayer.setText(getName());
         getContentPane().add(namePlayer);
-        namePlayer.setBounds(70, 390, 49, 15);
+        namePlayer.setBounds(70, 390, 50, 17);
         namePlayer.getAccessibleContext().setAccessibleDescription("");
 
         jButton1.setBackground(new java.awt.Color(45, 45, 45));
@@ -49,7 +49,7 @@ public class TelaDialogo3 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(80, 490, 160, 25);
+        jButton1.setBounds(80, 490, 160, 27);
 
         jScrollPane1.setBackground(new java.awt.Color(45, 45, 45));
         jScrollPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));

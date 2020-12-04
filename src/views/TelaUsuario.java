@@ -20,8 +20,6 @@ public class TelaUsuario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         namePlayer = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        ArrowRigth = new javax.swing.JButton();
-        ArrowLeft = new javax.swing.JButton();
         btnModalidade = new javax.swing.JButton();
         atUsuario = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
@@ -50,34 +48,10 @@ public class TelaUsuario extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(310, 110, 150, 30);
 
-        ArrowRigth.setBackground(new java.awt.Color(207, 77, 7));
-        ArrowRigth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/arrow-right.png"))); // NOI18N
-        ArrowRigth.setBorderPainted(false);
-        ArrowRigth.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ArrowRigth.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ArrowRigthActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ArrowRigth);
-        ArrowRigth.setBounds(450, 330, 30, 34);
-
-        ArrowLeft.setBackground(new java.awt.Color(178, 71, 0));
-        ArrowLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/arrow-left.png"))); // NOI18N
-        ArrowLeft.setBorderPainted(false);
-        ArrowLeft.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ArrowLeft.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ArrowLeftActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ArrowLeft);
-        ArrowLeft.setBounds(280, 330, 30, 34);
-
         btnModalidade.setBackground(new java.awt.Color(234, 208, 114));
         btnModalidade.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnModalidade.setForeground(new java.awt.Color(255, 255, 255));
-        btnModalidade.setText("Campanha");
+        btnModalidade.setText("Random");
         btnModalidade.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnModalidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,33 +75,12 @@ public class TelaUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModalidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModalidadeActionPerformed
-        String value = btnModalidade.getText();
-        if(value.equalsIgnoreCase("Random")){
+
             Random Rn = new Random();
             Rn.setVisible(true);
             dispose();
-        }
+        
     }//GEN-LAST:event_btnModalidadeActionPerformed
-
-    private void ArrowLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ArrowLeftActionPerformed
-        String value = btnModalidade.getText();
-        if(value.equalsIgnoreCase("campanha")){
-            btnModalidade.setText("Random");
-        }
-        if(value.equalsIgnoreCase("Random")){
-            btnModalidade.setText("Campanha");
-        }
-    }//GEN-LAST:event_ArrowLeftActionPerformed
-
-    private void ArrowRigthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ArrowRigthActionPerformed
-        String value = btnModalidade.getText();
-        if(value.equalsIgnoreCase("campanha")){
-            btnModalidade.setText("Random");
-        }
-        if(value.equalsIgnoreCase("Random")){
-            btnModalidade.setText("Campanha");
-        }
-    }//GEN-LAST:event_ArrowRigthActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,8 +118,6 @@ public class TelaUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ArrowLeft;
-    private javax.swing.JButton ArrowRigth;
     private javax.swing.JLabel atUsuario;
     private javax.swing.JLabel bg;
     private javax.swing.JButton btnModalidade;

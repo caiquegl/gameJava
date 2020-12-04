@@ -5,9 +5,11 @@ import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.ImageIcon;
 import static java.lang.Thread.sleep;
+import static views.Random.intervalo;
+import static views.Random.milissegundos;
 
         
-public class Random extends javax.swing.JFrame {
+public class Random1 extends javax.swing.JFrame {
     main html = new main();
     public static int intervalo = 1000;
     public static int milissegundos = 1000;
@@ -15,7 +17,8 @@ public class Random extends javax.swing.JFrame {
     /**
      * Creates new form Random
      */
-    public Random() {
+    public Random1() {
+       
         initComponents();
         acertos.setText(Integer.toString(html.acertos(0)));
         media.setText(Float.toString(html.media()));
@@ -87,9 +90,8 @@ public class Random extends javax.swing.JFrame {
         
         
 
-
-
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -102,7 +104,6 @@ public class Random extends javax.swing.JFrame {
 
         grupo = new javax.swing.ButtonGroup();
         acertou = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         atRandom = new javax.swing.JLabel();
         questionA = new javax.swing.JRadioButton();
         questionB = new javax.swing.JRadioButton();
@@ -113,18 +114,17 @@ public class Random extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         pergunta = new javax.swing.JTextPane();
-        jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        media = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         acertos = new javax.swing.JLabel();
-        media = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(750, 600));
         setMinimumSize(new java.awt.Dimension(750, 600));
-        setPreferredSize(new java.awt.Dimension(750, 600));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -132,12 +132,6 @@ public class Random extends javax.swing.JFrame {
         acertou.setText(" ");
         getContentPane().add(acertou);
         acertou.setBounds(260, 40, 230, 28);
-
-        jLabel2.setFont(new java.awt.Font("Chandas", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("e ter uma media de 75%");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(150, 100, 580, 50);
 
         atRandom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/at-esperandoRandom.png"))); // NOI18N
         getContentPane().add(atRandom);
@@ -153,7 +147,7 @@ public class Random extends javax.swing.JFrame {
             }
         });
         getContentPane().add(questionA);
-        questionA.setBounds(220, 290, 420, 23);
+        questionA.setBounds(230, 290, 400, 23);
 
         grupo.add(questionB);
         questionB.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
@@ -166,7 +160,7 @@ public class Random extends javax.swing.JFrame {
             }
         });
         getContentPane().add(questionB);
-        questionB.setBounds(220, 320, 420, 23);
+        questionB.setBounds(230, 320, 400, 23);
 
         grupo.add(questionC);
         questionC.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
@@ -178,7 +172,7 @@ public class Random extends javax.swing.JFrame {
             }
         });
         getContentPane().add(questionC);
-        questionC.setBounds(220, 350, 420, 23);
+        questionC.setBounds(230, 350, 400, 23);
 
         grupo.add(questionD);
         questionD.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
@@ -190,7 +184,7 @@ public class Random extends javax.swing.JFrame {
             }
         });
         getContentPane().add(questionD);
-        questionD.setBounds(220, 390, 420, 23);
+        questionD.setBounds(230, 390, 400, 23);
 
         quantTotal.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         quantTotal.setForeground(java.awt.Color.white);
@@ -235,12 +229,6 @@ public class Random extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(200, 140, 460, 310);
 
-        jLabel1.setFont(new java.awt.Font("Chandas", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Para ganhar tem que responder no minimo 10 perguntas");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(150, 70, 580, 50);
-
         jButton2.setBackground(java.awt.Color.orange);
         jButton2.setText("Confirmar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -250,6 +238,29 @@ public class Random extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2);
         jButton2.setBounds(340, 470, 140, 27);
+
+        jLabel1.setFont(new java.awt.Font("Chandas", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Para ganhar tem que responder no minimo 10 perguntas");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(150, 70, 580, 50);
+
+        jLabel2.setFont(new java.awt.Font("Chandas", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("e ter uma media de 75%");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(150, 100, 580, 50);
+
+        jLabel5.setForeground(java.awt.Color.white);
+        jLabel5.setText("Media");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(30, 490, 60, 17);
+
+        media.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        media.setForeground(java.awt.Color.white);
+        media.setText("Quantidade jogada");
+        getContentPane().add(media);
+        media.setBounds(100, 490, 150, 18);
 
         jLabel4.setForeground(java.awt.Color.white);
         jLabel4.setText("Acertos");
@@ -261,17 +272,6 @@ public class Random extends javax.swing.JFrame {
         acertos.setText("Quantidade jogada");
         getContentPane().add(acertos);
         acertos.setBounds(100, 510, 150, 18);
-
-        media.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        media.setForeground(java.awt.Color.white);
-        media.setText("Quantidade jogada");
-        getContentPane().add(media);
-        media.setBounds(100, 490, 150, 18);
-
-        jLabel5.setForeground(java.awt.Color.white);
-        jLabel5.setText("Media");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(30, 490, 60, 17);
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/bg-home.jpg"))); // NOI18N
         bg.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -321,8 +321,7 @@ public class Random extends javax.swing.JFrame {
         if(questionD.isSelected() == true){
             selecionar = questionD.getText();
         }
-
-
+        
         if(selecionar.equalsIgnoreCase(respostaCorreta)){
 
             acertou.setText("ACERTOU!!!");
@@ -353,18 +352,20 @@ public class Random extends javax.swing.JFrame {
 
             acertou.setText("ERROU!!!");
             atRandom.setIcon(new ImageIcon(getClass().getResource("/Img/at-errou-random.png")));
-            new java.util.Timer().schedule(
+                new java.util.Timer().schedule(
             new java.util.TimerTask() {
             @Override
             public void run() {
-                                    html.addJogada(1);
-                Random1 Cn = new Random1();
+                                html.addJogada(1);
+
+                Random Cn = new Random();
                     Cn.setVisible(true);
                     dispose();
             }
         }, 
-        4000 ); 
+        4000 );
 
+            
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -385,14 +386,15 @@ public class Random extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Random.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Random1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Random.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Random1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Random.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Random1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Random.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Random1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -401,7 +403,7 @@ public class Random extends javax.swing.JFrame {
             
             public void run() {
                 
-                new Random().setVisible(true);
+                new Random1().setVisible(true);
             }
         });
     }
